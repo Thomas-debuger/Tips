@@ -1,0 +1,47 @@
+.card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.card::after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent 75%, #d400d4);
+    animation: animate 4s linear -2s infinite;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent 75%, #00ccff);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+.card span{
+    position: absolute;
+    inset: 10px;
+    background: #2f363e;
+    z-index: 1;
+    border-radius: 16px;
+}
+.card h2{
+    z-index: 2;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    background: -webkit-linear-gradient(180deg #d400d4, #00ccff);
+    -webkit-background-clip: text;
+    /*-webkit-text-fill-color: transparent;*/
+}
